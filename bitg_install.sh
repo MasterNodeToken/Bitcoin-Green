@@ -8,7 +8,7 @@ COIN_CLI='bitcoingreen-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_TGZ='https://github.com/bitcoingreen/bitcoingreen/releases/download/1.1.0/bitcoingreen-1.1.0-x86_64-linux-gnu.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='Bitcoin Green'
+COIN_NAME='BitcoinGreen'
 COIN_PORT=9333
 RPC_PORT=9332
 
