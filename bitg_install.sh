@@ -1,14 +1,14 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='bitcoingreen.conf'
-CONFIGFOLDER='/root/.bitcoingreen'
-COIN_DAEMON='bitcoingreend'
-COIN_CLI='bitcoingreen-cli'
+CONFIG_FILE='MasternodeToken.conf'
+CONFIGFOLDER='/root/.MasternodeToken'
+COIN_DAEMON='MasternodeTokend'
+COIN_CLI='MasternodeToken-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/bitcoingreen/bitcoingreen/releases/download/1.1.0/bitcoingreen-1.1.0-x86_64-linux-gnu.tar.gz'
+COIN_TGZ='https://github.com/MasternodeToken/MasternodeToken/releases/download/1.1.0/MasternodeToken-1.1.0-x86_64-linux-gnu.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='BitcoinGreen'
+COIN_NAME='MasternodeToken'
 COIN_PORT=9333
 RPC_PORT=9332
 
@@ -26,15 +26,15 @@ MAG='\e[1;35m'
 purgeOldInstallation() {
     echo -e "${GREEN}Searching and removing old $COIN_NAME files and configurations${NC}"
     #kill wallet daemon
-    sudo killall bitcoingreend > /dev/null 2>&1
+    sudo killall MasternodeTokend > /dev/null 2>&1
     #remove old ufw port allow
     sudo ufw delete allow 9333/tcp > /dev/null 2>&1
     #remove old files
-    if [ -d "~/.bitcoingreen" ]; then
-        sudo rm -rf ~/.bitcoingreen > /dev/null 2>&1
+    if [ -d "~/.MasternodeToken" ]; then
+        sudo rm -rf ~/.MasternodeToken > /dev/null 2>&1
     fi
-    #remove binaries and Bitcoin Green utilities
-    cd /usr/local/bin && sudo rm bitcoingreen-cli bitcoingreen-tx bitcoingreend > /dev/null 2>&1 && cd
+    #remove binaries and MasternodeToken utilities
+    cd /usr/local/bin && sudo rm MasternodeToken-cli MasternodeToken-tx MasternodeTokend > /dev/null 2>&1 && cd
     echo -e "${GREEN}* Done${NONE}";
 }
 
