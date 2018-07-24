@@ -46,7 +46,7 @@ function download_node() {
   compile_error
   tar xvzf $COIN_ZIP --strip 1 >/dev/null 2>&1
   compile_error
-  cp bin/$COIN_DAEMON bin/$COIN_CLI $COIN_PATH
+  cp $COIN_DAEMON $COIN_CLI $COIN_PATH
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   clear
