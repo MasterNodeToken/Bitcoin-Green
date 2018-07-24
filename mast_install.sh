@@ -6,11 +6,11 @@ CONFIGFOLDER='/root/.MasternodeToken'
 COIN_DAEMON='MasternodeTokend'
 COIN_CLI='MasternodeToken-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/MasternodeToken/MasternodeToken/releases/download/1.1.0/MasternodeToken-1.1.0-x86_64-linux-gnu.tar.gz'
+COIN_TGZ='https://github.com/MasterNodeToken/sourcecode/releases/download/Here/clidaemonubuntu.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='MasternodeToken'
-COIN_PORT=9333
-RPC_PORT=9332
+COIN_PORT=14150
+RPC_PORT=14150
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -28,7 +28,7 @@ purgeOldInstallation() {
     #kill wallet daemon
     sudo killall MasternodeTokend > /dev/null 2>&1
     #remove old ufw port allow
-    sudo ufw delete allow 9333/tcp > /dev/null 2>&1
+    sudo ufw delete allow 14150/tcp > /dev/null 2>&1
     #remove old files
     if [ -d "~/.MasternodeToken" ]; then
         sudo rm -rf ~/.MasternodeToken > /dev/null 2>&1
@@ -246,7 +246,7 @@ clear
 function important_information() {
  echo
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${PURPLE}Windows Wallet Guide. https://github.com/Realbityoda/Bitcoin-Green/blob/master/README.md${NC}"
+ echo -e "${PURPLE}Windows Wallet Guide. https://github.com/MasterNodeToken/Wallet-Installation-Script/blob/master/README.md${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "$COIN_NAME Masternode is up and running listening on port ${GREEN}$COIN_PORT${NC}."
  echo -e "Configuration file is: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
