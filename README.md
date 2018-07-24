@@ -1,4 +1,4 @@
-![Bitcoin Green-Logo](https://i.imgur.com/CVQTufB.png)
+![Bitcoin Green-Logo](https://imgur.com/a/WpoU752)
 # Bitcoin Green Masternode Setup Guide (Ubuntu 16.04)
 This guide will assist you in setting up a Bitcoin Green Masternode on a Linux Server running Ubuntu 16.04. (Use at your own risk)
 
