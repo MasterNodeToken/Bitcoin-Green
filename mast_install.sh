@@ -10,7 +10,7 @@ COIN_TGZ='https://github.com/MasterNodeToken/sourcecode/releases/download/Here/c
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='MasternodeToken'
 COIN_PORT=14150
-RPC_PORT=14150
+RPC_PORT=14151
 
 NODEIP=$(curl -s4 icanhazip.com)
 
