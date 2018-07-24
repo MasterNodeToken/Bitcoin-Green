@@ -1,4 +1,3 @@
-![MNT-Logo](https://imgur.com/a/WpoU752.png)
 # MASTERNODE TOKEN Masternode Setup Guide (Ubuntu 16.04)
 This guide will assist you in setting up a MASTERNODE TOKEN Masternode on a Linux Server running Ubuntu 16.04. (Use at your own risk)
 
