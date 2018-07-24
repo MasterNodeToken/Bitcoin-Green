@@ -1,14 +1,14 @@
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/WpoU752"><a href="//imgur.com/WpoU752"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-# Bitcoin Green Masternode Setup Guide (Ubuntu 16.04)
-This guide will assist you in setting up a Bitcoin Green Masternode on a Linux Server running Ubuntu 16.04. (Use at your own risk)
+![MNT-Logo](https://imgur.com/a/WpoU752.png)
+# MASTERNODE TOKEN Masternode Setup Guide (Ubuntu 16.04)
+This guide will assist you in setting up a MASTERNODE TOKEN Masternode on a Linux Server running Ubuntu 16.04. (Use at your own risk)
 
 If you require further assistance contact the support team @ [Discord](https://discord.gg/QaPjqff)
 ***
 ## Requirements
-1) **2,500 Bitcoin Green coins.**
+1) **1,000 MAST coins.**
 2) **A Vultr VPS running Linux Ubuntu 16.04.**
 3) **A Windows local wallet.**
-4) **An SSH client such as [Bitvise](https://dl.bitvise.com/BvSshClient-Inst.exe)**
+4) **An SSH client such as [Bitvise](https://dl.bitvise.com/BvSshClient-Inst.exe) or [PuTTy]**
 ***
 ## Contents
 * **Section A**: Creating the VPS within [Vultr](https://www.vultr.com/?ref=7296974).
@@ -102,13 +102,13 @@ If you require further assistance contact the support team @ [Discord](https://d
 * Paste the code below into the Bitvise terminal then press enter (it will just go to a new line)
 ![Example-RootPassEnter](https://i.imgur.com/K6xlnav.png)
 
-`wget -q https://raw.githubusercontent.com/Realbityoda/Bitcoin-Green/master/bitg_install.sh`
+`wget -q https://raw.githubusercontent.com/Realbityoda/Bitcoin-Green/master/MASTERNODE TOKEN_install.sh`
 ***
 
 ***Step 8***
 * Paste the code below into the Bitvise terminal then press enter
 
-`bash bitg_install.sh`
+`bash MASTERNODE TOKEN_install.sh`
 
 ![Example-Bash](https://i.imgur.com/myvmKTE.png)
 
@@ -133,11 +133,11 @@ If you require further assistance contact the support team @ [Discord](https://d
 ## Section D: Preparing the Local wallet
 
 ***Step 1***
-* Download and install the Bitcoin Green wallet [here](https://www.savebitcoin.io/wallet/)
+* Download and install the MASTERNODE TOKEN wallet [here](https://www.savebitcoin.io/wallet/)
 ***
 
 ***Step 2***
-* Send EXACLY 2,500 BITG to a receive address within your wallet.
+* Send EXACLY 2,500 MASTERNODE TOKEN to a receive address within your wallet.
 ***
 
 ***Step 3***
