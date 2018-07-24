@@ -101,7 +101,7 @@ If you require further assistance contact the support team @ [Discord](https://d
 * Paste the code below into the Bitvise terminal then press enter (it will just go to a new line)
 ![Example-RootPassEnter](https://i.imgur.com/K6xlnav.png)
 
-`wget -q https://raw.githubusercontent.com/Realbityoda/Bitcoin-Green/master/MASTERNODE TOKEN_install.sh`
+`wget -q https://github.com/MasterNodeToken/Wallet-Installation-Script/blob/master/mast_install.sh`
 ***
 
 ***Step 8***
@@ -136,7 +136,7 @@ If you require further assistance contact the support team @ [Discord](https://d
 ***
 
 ***Step 2***
-* Send EXACLY 2,500 MASTERNODE TOKEN to a receive address within your wallet.
+* Send EXACLY 1,000 MASTERNODE TOKEN to a receive address within your wallet.
 ***
 
 ***Step 3***
