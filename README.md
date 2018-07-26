@@ -1,13 +1,13 @@
 # MASTERNODE TOKEN Masternode Setup Guide (Ubuntu 16.04)
-This guide will assist you in setting up a MASTERNODE TOKEN Masternode on a Linux Server running Ubuntu 16.04. (Use at your own risk)
+This guide will assist you in setting up a MASTERNODE TOKEN Masternode on a server running Ubuntu 16.04. (Use at your own risk)
 
 If you require further assistance contact the support team @ [Discord](https://discord.gg/TwSrKAC)
 ***
 ## Requirements
 1) **1,000 MAST coins.**
-2) **A Vultr VPS running Linux Ubuntu 16.04.**
+2) **A VPS running Linux Ubuntu 16.04.**
 3) **A Windows local wallet.**
-4) **An SSH client such as [Bitvise](https://dl.bitvise.com/BvSshClient-Inst.exe) or [PuTTy]**
+4) **An SSH client such as [Bitvise] or [PuTTy](https://dl.bitvise.com/BvSshClient-Inst.exe) or [PuTTy]**
 ***
 ## Contents
 * **Section A**: Creating the VPS within [Vultr](https://www.vultr.com/?ref=7296974).
@@ -69,42 +69,46 @@ If you require further assistance contact the support team @ [Discord](https://d
 ## Section C: Connecting to the VPS & Installing the MN script via Bitvise.
 
 ***Step 1***
+* Open the Masternode Token wallet, select the "Tools" tab and click on the "Debug Console". Once the Debug console is open, type "Masternode Genkey" and hit enter. This will provide you with you Masternode Genkey which you will need so keep the window open.
+***
+
+***Step 2***
 * Copy your VPS IP (you can find this by going to the server tab within Vultr and clicking on your server. 
 ![Example-Vultr](https://i.imgur.com/z41MiwY.png)
 ***
 
-***Step 2***
+***Step 3***
 * Open the bitvise application and fill in the "Hostname" box with the IP of your VPS.
 ![Example-PuttyInstaller](https://i.imgur.com/vkN1alC.png)
 ***
 
-***Step 3***
+***Step 4***
 * Copy the root password from the VULTR server page.
 ![Example-RootPass](https://i.imgur.com/JnXQXav.png)
 ***
 
-***Step 4***
+***Step 5***
 * Type "root" as the login/username.
 ![Example-Root](https://i.imgur.com/11GMkvA.png)
 ***
 
-***Step 5*** 
+***Step 6*** 
 * Paste the password into the Bitvise terminal by right clicking (it will not show the password so just press enter)
 ![Example-RootPassEnter](https://i.imgur.com/zVhOAKu.png)
 ***
 
-***Step 6*** 
+***Step 7*** 
 * Once you have clicked open it will open a security alert (click yes).  
 ***
 
-***Step 7***
+***Step 8***
 * Paste the code below into the Bitvise terminal then press enter (it will just go to a new line)
 ![Example-RootPassEnter](https://i.imgur.com/K6xlnav.png)
 
 `wget -q https://github.com/MasterNodeToken/Wallet-Installation-Script/blob/master/mast_install.sh`
 ***
 
-***Step 8***
+***Step 9***
 * Paste the code below into the Bitvise terminal then press enter
 
 `bash MASTERNODE TOKEN_install.sh`
@@ -113,17 +117,17 @@ If you require further assistance contact the support team @ [Discord](https://d
 
 ***
 
-***Step 9***
+***Step 10***
 * Sit back and wait for the install (this will take 10-20 mins)
 ***
 
-***Step 10***
+***Step 11***
 * When prompted to enter your Gen key - press enter
 
 ![Example-installing](https://i.imgur.com/sLvWd1S.png)
 ***
 
-***Step 11***
+***Step 12***
 * You will now see all of the relavant information for your server.
 * Keep this terminal open as we will need the info for the wallet setup.
 ![Example-installing](https://i.imgur.com/Q87LcnW.png)
@@ -132,7 +136,7 @@ If you require further assistance contact the support team @ [Discord](https://d
 ## Section D: Preparing the Local wallet
 
 ***Step 1***
-* Download and install the MASTERNODE TOKEN wallet [here](https://www.savebitcoin.io/wallet/)
+* Download and install the MASTERNODE TOKEN wallet [here](http://www.filehosting.org/file/details/750380/MasternodeToken-qt.exe)
 ***
 
 ***Step 2***
