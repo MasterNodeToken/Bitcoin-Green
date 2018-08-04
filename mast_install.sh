@@ -6,6 +6,7 @@ CONFIGFOLDER='/root/.MasternodeToken'
 COIN_DAEMON='MasternodeTokend'
 COIN_CLI='MasternodeToken-cli'
 COIN_PATH='/usr/local/bin/'
+COIN_REPO='https://github.com/MasterNodeToken/sourcecode.git'
 COIN_TGZ='https://github.com/MasterNodeToken/sourcecode/releases/download/Here/clidaemonubuntu.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='MasternodeToken'
@@ -26,32 +27,44 @@ MAG='\e[1;35m'
 purgeOldInstallation() {
     echo -e "${GREEN}Searching and removing old $COIN_NAME files and configurations${NC}"
     #kill wallet daemon
-    sudo killall MasternodeTokend > /dev/null 2>&1
+	sudo killall MasternodeTokend > /dev/null 2>&1
     #remove old ufw port allow
-    sudo ufw delete allow 14150/tcp > /dev/null 2>&1
+    sudo ufw delete allow 51470/tcp > /dev/null 2>&1
     #remove old files
     if [ -d "~/.MasternodeToken" ]; then
         sudo rm -rf ~/.MasternodeToken > /dev/null 2>&1
     fi
     #remove binaries and MasternodeToken utilities
-    cd /usr/local/bin && sudo rm MasternodeToken-cli MasternodeToken-tx MasternodeTokend > /dev/null 2>&1 && cd
+    cd /usr/local/bin && sudo rm MasternodeToken-cli MasternodeToken-tx MasternodeToken > /dev/null 2>&1 && cd
     echo -e "${GREEN}* Done${NONE}";
 }
 
+function install_sentinel() {
+  echo -e "${GREEN}Installing sentinel.${NC}"
+  apt-get -y install python-virtualenv virtualenv >/dev/null 2>&1
+  git clone $SENTINEL_REPO $CONFIGFOLDER/sentinel >/dev/null 2>&1
+  cd $CONFIGFOLDER/sentinel
+  virtualenv ./venv >/dev/null 2>&1
+  ./venv/bin/pip install -r requirements.txt >/dev/null 2>&1
+  echo  "* * * * * cd $CONFIGFOLDER/sentinel && ./venv/bin/python bin/sentinel.py >> $CONFIGFOLDER/sentinel.log 2>&1" > $CONFIGFOLDER/$COIN_NAME.cron
+  crontab $CONFIGFOLDER/$COIN_NAME.cron
+  rm $CONFIGFOLDER/$COIN_NAME.cron >/dev/null 2>&1
+}
 
 function download_node() {
   echo -e "${GREEN}Downloading and Installing VPS $COIN_NAME Daemon${NC}"
   cd $TMP_FOLDER >/dev/null 2>&1
+  rm $COIN_ZIP >/dev/null 2>&1
   wget -q $COIN_TGZ
   compile_error
-  tar xvzf $COIN_ZIP --strip 1 >/dev/null 2>&1
+  tar xvzf $COIN_ZIP >/dev/null 2>&1
+  cd MasternodeToken-3.1.0/bin
+  chmod +x $COIN_DAEMON $COIN_CLI
   compile_error
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
   cd - >/dev/null 2>&1
-  rm -rf $TMP_FOLDER >/dev/null 2>&1
   clear
 }
-
 
 function configure_systemd() {
   cat << EOF > /etc/systemd/system/$COIN_NAME.service
@@ -148,6 +161,7 @@ masternodeprivkey=$COINKEY
 addnode=207.148.18.142
 addnode=149.28.50.154
 addnode=144.202.11.222
+
 
 EOF
 }
@@ -277,7 +291,7 @@ function setup_node() {
   create_key
   update_config
   enable_firewall
-  #install_sentinel
+#  install_sentinel
   important_information
   configure_systemd
 }
