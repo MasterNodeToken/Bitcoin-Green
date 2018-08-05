@@ -111,7 +111,7 @@ If you require further assistance contact the support team @ [Discord](https://d
 ***Step 9***
 * Paste the code below into the Bitvise terminal then press enter
 
-`chmod 775 ./mast_install.sh && bash mast_install.sh`
+`chmod 775 ./mast_install.sh && sudo ./mast_install.sh`
 
 ![Example-Bash](https://i.imgur.com/myvmKTE.png)
 
