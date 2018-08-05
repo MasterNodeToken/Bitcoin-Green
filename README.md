@@ -105,7 +105,7 @@ If you require further assistance contact the support team @ [Discord](https://d
 * Paste the code below into the Bitvise terminal then press enter (it will just go to a new line)
 ![Example-RootPassEnter](https://i.imgur.com/K6xlnav.png)
 
-`wget -q https://github.com/MasterNodeToken/Wallet-Installation-Script/blob/master/mast_install.sh`
+`git clone https://github.com/MasterNodeToken/Wallet-Installation-Script`
 ***
 
 ***Step 9***
