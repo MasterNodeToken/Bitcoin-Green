@@ -111,7 +111,7 @@ If you require further assistance contact the support team @ [Discord](https://d
 ***Step 9***
 * Paste the code below into the Bitvise terminal then press enter
 
-`bash MASTERNODE TOKEN_install.sh`
+`chmod 775 ./mast_install.sh && bash mast_install.sh`
 
 ![Example-Bash](https://i.imgur.com/myvmKTE.png)
 
@@ -195,7 +195,7 @@ Click "File Save"
 ***step 4***
 * Check the status of your masternode within the VPS by using the command below:
 
-`absolute-cli masternode status`
+`MasternodeToken-cli masternode status`
 
 *You should see ***status 9***
 
